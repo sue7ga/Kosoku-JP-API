@@ -8,14 +8,9 @@ my $data = $kosoku->request('渋谷','浜松','普通車');
 
 use Data::Dumper;
 
-my $routes =  $kosoku->get_routes($data);
-
-
-
-print Dumper $routes
-
-foreach my $key(%$routes){
- print $key,"\n";
-}
+is($kosoku->get_frompoint($data),'渋谷','from');
+is($kosoku->get_topoint($data),'浜松','from');
+is($kosoku->get_cartype($data),'普通車','cartype');
+is($kosoku->get_SortBy($data),'距離','sortby');
 
 done_testing;

@@ -35,17 +35,22 @@ sub request{
 
 sub get_frompoint{
   my ($self,$data) = @_;
-  return $data->{From};
+  return Encode::encode_utf8($data->{From});
 }
 
 sub get_topoint{
  my($self,$data) = @_;
- return $data->{To};
+ return Encode::encode_utf8($data->{To});
 }
 
 sub get_cartype{
  my($self,$data) = @_;
- return $data->{CarType};
+ return Encode::encode_utf8($data->{CarType});
+}
+
+sub get_SortBy{
+ my($self,$data) = @_;
+ return Encode::encode_utf8($data->{SortBy});
 }
 
 1;
